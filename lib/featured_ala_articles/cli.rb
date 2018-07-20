@@ -11,6 +11,7 @@ class FeaturedAlaArticles::CLI
 		@featured_articles.each.with_index(1) do |article, i|
 			puts "#{i}. #{article.title}"
 		end
+		puts ""
 	end
 
 	def choose_article
@@ -21,11 +22,16 @@ class FeaturedAlaArticles::CLI
 
 			if input.to_i > 0
 				this_article = @featured_articles[input.to_i-1]
+				puts ""
 				puts "#{this_article.title}"
+				puts "----------"
 				puts "Published: #{this_article.date}"
 				puts "By: #{this_article.author}"
+				puts "----------"
 				puts "#{this_article.summary}"
+				puts "----------"
 				puts "For the full article click here -> https://alistapart.com#{this_article.url}"
+				puts ""
 			elsif input == "exit"
 				goodbye
 			else
@@ -35,6 +41,7 @@ class FeaturedAlaArticles::CLI
 	end
 
 	def goodbye
+		puts ""
 		puts "Check back again for more featured content!"
 	end	
 end
