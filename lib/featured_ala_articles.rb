@@ -1,5 +1,2 @@
-require "featured_ala_articles/version"
-
-module FeaturedAlaArticles
-  # Your code goes here...
-end
+require_relative "featured_ala_articles/version"
+require_relative "featured_ala_articles/cli"
