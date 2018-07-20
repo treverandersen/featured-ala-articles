@@ -7,9 +7,10 @@ class FeaturedAlaArticles::CLI
 
 	def list_articles
 		puts "Here are the latest featured posts from A List Apart:"
-		FeaturedAlaArticles::Articles.scrape_ala
-		puts "1. article title one"
-		puts "2. article title two"
+		@featured_articles = FeaturedAlaArticles::Articles.scrape_ala
+		@featured_articles.each.with_index(1) do |article, i|
+			puts "#{i}. #{article.title}"
+		end
 	end
 
 	def choose_article
