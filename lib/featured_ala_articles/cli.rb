@@ -7,6 +7,7 @@ class FeaturedAlaArticles::CLI
 
 	def list_articles
 		puts "Here are the latest featured posts from A List Apart:"
+		FeaturedAlaArticles::Articles.scrape_ala
 		puts "1. article title one"
 		puts "2. article title two"
 	end
