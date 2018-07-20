@@ -20,11 +20,12 @@ class FeaturedAlaArticles::CLI
 			input = gets.strip.downcase
 
 			if input.to_i > 0
-				puts "article title"
-				puts "article date"
-				puts "article author"
-				puts "article summary"
-				puts "link"
+				this_article = @featured_articles[input.to_i-1]
+				puts "#{this_article.title}"
+				puts "Published: #{this_article.date}"
+				puts "By: #{this_article.author}"
+				puts "#{this_article.summary}"
+				puts "For the full article click here -> https://alistapart.com#{this_article.url}"
 			elsif input == "exit"
 				goodbye
 			else
