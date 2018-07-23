@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require './lib/featured_ala_articles'
+require_relative '../lib/featured_ala_articles'
 
 FeaturedAlaArticles::CLI.new.call

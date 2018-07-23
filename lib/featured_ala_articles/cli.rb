@@ -1,13 +1,14 @@
 class FeaturedAlaArticles::CLI
 
 	def call
+		FeaturedAlaArticles::Scraper.scrape_ala
 		list_articles
 		choose_article
 	end
 
 	def list_articles
 		puts "Here are the latest featured posts from A List Apart:"
-		@featured_articles = FeaturedAlaArticles::Articles.scrape_ala
+		@featured_articles = FeaturedAlaArticles::Articles.all
 		@featured_articles.each.with_index(1) do |article, i|
 			puts "#{i}. #{article.title}"
 		end
@@ -20,7 +21,7 @@ class FeaturedAlaArticles::CLI
 			puts "Enter the number of which article you'd like more info on or type 'exit' to exit:"
 			input = gets.strip.downcase
 
-			if input.to_i > 0
+			if input.to_i > 0 && input.to_i < 3
 				this_article = @featured_articles[input.to_i-1]
 				puts ""
 				puts "#{this_article.title}"

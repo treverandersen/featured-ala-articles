@@ -1,8 +1,6 @@
 # FeaturedAlaArticles
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/featured_ala_articles`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+This is a gem for scraping A List Apart's website for their featured articles.
 
 ## Installation
 
@@ -22,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+When this gem scrapes A List Apart's website it'll return you the featured articles from their homepage and ask which one you'd like more information on. Once you let it know which article you'd like more information on, it'll return who wrote it, the date it was published, a summary of the article, and a link to open the article in your default browser.
 
 ## Development
 
